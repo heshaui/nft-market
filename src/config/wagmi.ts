@@ -1,6 +1,12 @@
 // config.ts
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
-import { Chain, http } from "viem";
+import { http } from "viem";
+import {
+	mainnet,
+	optimism,
+	polygon,
+	sepolia,
+  } from 'wagmi/chains';
 
 // 2. WalletConnect 项目 ID
 const projectId = "ba6959053c9d7ba9a364dab98d9fb4f0";
@@ -9,12 +15,13 @@ const projectId = "ba6959053c9d7ba9a364dab98d9fb4f0";
 export const config = getDefaultConfig({
   appName: 'PLEDGE',
   projectId,
-  chains: [bscMainnet, bscTestnet],
+  chains: [
+	mainnet,
+	optimism,
+	polygon,
+	sepolia,],
   transports: {
-    [bscMainnet.id]: http(bscMainnet.rpcUrls.default.http[0]),
-    [bscTestnet.id]: http(bscTestnet.rpcUrls.default.http[0]),
+    [sepolia.id]: http('https://sepolia.infura.io/v3/d8ed0bd1de8242d998a1405b6932ab33')
   },
   ssr: true
 });
-
-export const defaultChainId = bscMainnet.id
