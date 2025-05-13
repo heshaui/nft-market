@@ -14,7 +14,7 @@ function Providers({ children }: { children: React.ReactNode }) {
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
           <RainbowKitProvider>
-			<NavBar></NavBar>
+			      <NavBar />
             {children}
           </RainbowKitProvider>
         </QueryClientProvider>

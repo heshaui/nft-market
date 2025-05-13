@@ -36,7 +36,10 @@ const NavBar = () => {
 			<div className="flex items-center justify-between">
 				{/* 左侧图标、菜单 */}
 				<div className="flex items-center space-x-8">
-					<img src="/logo.png" alt="RCC" width={100} height={100} />
+					<div className="text-primary font-bold text-2xl font-poppins">
+						{/* RCC */}
+						<img src="/logo.png" alt="RCC" width={100} height={100} />
+					</div>
 					{/* 桌面端导航菜单 */}
 					<nav className="hidden md:flex space-x-6 text-sm">
 						{
